@@ -16,7 +16,7 @@ public class Categoria implements Serializable{
 	private static final long serialVersionUID = 5775600215216301704L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idCategoria;
 	private String nome;
 	

@@ -19,7 +19,7 @@ public abstract class Usuario implements Serializable {
 
 	private static final long serialVersionUID = -4331797435789532344L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idUsuario;
 	private String nome;
 	private String cpf;

@@ -15,7 +15,7 @@ public class Permissao implements Serializable {
 
 	private static final long serialVersionUID = 3226675709104105792L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idPermissao;
 	private String descricao;
 
