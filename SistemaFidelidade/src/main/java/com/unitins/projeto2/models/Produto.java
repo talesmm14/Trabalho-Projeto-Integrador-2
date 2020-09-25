@@ -26,5 +26,17 @@ public class Produto implements Serializable {
 	private Categoria categoria;
 	private Integer pontosRecebidos;
 	private Integer pontosRetirada;
+	
+	public Produto(String nome, Categoria categoria, Integer pontosRecebidos, Integer pontosRetirada) {
+		super();
+		this.nome = nome;
+		this.categoria = categoria;
+		this.pontosRecebidos = pontosRecebidos;
+		this.pontosRetirada = pontosRetirada;
+	}
+
+	public Produto() {
+		super();
+	}
 
 }

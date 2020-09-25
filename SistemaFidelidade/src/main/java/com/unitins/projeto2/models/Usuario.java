@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
@@ -26,6 +27,8 @@ public abstract class Usuario implements Serializable {
 	private String email;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataAlteracao;
+	@JoinColumn(name = "id_permissao")
+	private Permissao permissao;
 	
 	@PreUpdate
 	private void atualizarUsuario() {
