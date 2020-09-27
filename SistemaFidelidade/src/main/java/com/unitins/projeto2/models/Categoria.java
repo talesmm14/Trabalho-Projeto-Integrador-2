@@ -2,6 +2,7 @@ package com.unitins.projeto2.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,8 @@ public class Categoria implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idCategoria;
+	
+	@Column(name="nome", nullable = false)
 	private String nome;
 	
 	public Categoria(String nome) {
