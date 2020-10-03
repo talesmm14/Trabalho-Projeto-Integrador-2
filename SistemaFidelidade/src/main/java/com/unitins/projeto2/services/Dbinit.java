@@ -8,8 +8,16 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import com.unitins.projeto2.models.Categoria;
+import com.unitins.projeto2.models.Cliente;
+import com.unitins.projeto2.models.Funcionario;
+import com.unitins.projeto2.models.HistoricoTroca;
+import com.unitins.projeto2.models.Permissao;
 import com.unitins.projeto2.models.Produto;
 import com.unitins.projeto2.repository.CategoriaRepository;
+import com.unitins.projeto2.repository.ClienteRepository;
+import com.unitins.projeto2.repository.FuncionarioRepository;
+import com.unitins.projeto2.repository.HistoricoRepository;
+import com.unitins.projeto2.repository.PermissaoRepository;
 import com.unitins.projeto2.repository.ProdutoRepository;
 
 @Service
@@ -17,9 +25,16 @@ public class Dbinit implements CommandLineRunner {
 	
 	@Autowired
 	CategoriaRepository categoriaRepository;
-	
 	@Autowired
 	ProdutoRepository produtoRepository;
+	@Autowired
+	PermissaoRepository permissaoRepository; 
+	@Autowired
+	FuncionarioRepository funcionarioRepository;
+	@Autowired
+	ClienteRepository clienteRepository;
+	@Autowired
+	HistoricoRepository historicoRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -51,6 +66,52 @@ public class Dbinit implements CommandLineRunner {
 		
 		produtoRepository.saveAll(listaProduto);
 		
+		List<Permissao> listaPermissao = new ArrayList<Permissao>();
+		
+		Permissao permissao1 = new Permissao("Admin");
+		listaPermissao.add(permissao1);
+		Permissao permissao2 = new Permissao("Funcionário");
+		listaPermissao.add(permissao2);
+		
+		permissaoRepository.saveAll(listaPermissao);
+		
+		List<Funcionario> listaFuncionario = new ArrayList<Funcionario>();
+		
+		Funcionario funcionario1 = new Funcionario("Gustavo Parro", "123.123.123-00", "gustavo@gmail.com", "123", permissao1);
+		listaFuncionario.add(funcionario1);
+		Funcionario funcionario2 = new Funcionario("Juju Pantera", "321.321.321-99", "juju@gmail.com", "321", permissao2);
+		listaFuncionario.add(funcionario2);
+		Funcionario funcionario3 = new Funcionario("Beatriz ...", "666.666.666.11", "bia@gmail.com", "666", permissao2);
+		listaFuncionario.add(funcionario3);
+		
+		funcionarioRepository.saveAll(listaFuncionario);
+		
+		List<Cliente> listaCliente = new ArrayList<Cliente>();
+		
+		Cliente cliente1 = new Cliente("Tales", "222.111.333-44", "tales@gmail.com", "(63) 98762-2132", 120);
+		listaCliente.add(cliente1);
+		Cliente cliente2 = new Cliente("Yuri", "333.212.121-12", "yuri@gmail.com", "(63) 9992-9821", 23);
+		listaCliente.add(cliente2);
+		Cliente cliente3 = new Cliente("Zhy", "000.000.000.22", "zhy@gmail.com", "(63) 98438-9200", 6);
+		listaCliente.add(cliente3);
+		
+		clienteRepository.saveAll(listaCliente);
+		
+		List<HistoricoTroca> listaTroca = new ArrayList<HistoricoTroca>();
+		
+		
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,4 +6,6 @@ import com.unitins.projeto2.models.Funcionario;
 
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long>{
 
+	Funcionario findById(long id);
+	
 }

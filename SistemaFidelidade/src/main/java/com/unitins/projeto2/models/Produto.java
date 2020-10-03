@@ -37,16 +37,19 @@ public class Produto implements Serializable {
 	@Column(name="pontosRetirada", nullable = false)
 	private Integer pontosRetirada;
 	
+	private boolean status;
+	
 	public Produto(String nome, Categoria categoria, Integer pontosRecebidos, Integer pontosRetirada) {
 		super();
 		this.nome = nome;
 		this.categoria = categoria;
 		this.pontosRecebidos = pontosRecebidos;
 		this.pontosRetirada = pontosRetirada;
+		this.status = true;
 	}
 
 	public Produto() {
-		super();
+		this.status = true;
 	}
 
 }

@@ -23,13 +23,15 @@ public class Categoria implements Serializable{
 	@Column(name="nome", nullable = false)
 	private String nome;
 	
+	private boolean status;
+	
 	public Categoria(String nome) {
-		super();
 		this.nome = nome;
+		this.status = true;
 	}
 
 	public Categoria() {
-		super();
+		this.status = true;
 	}
 	
 }

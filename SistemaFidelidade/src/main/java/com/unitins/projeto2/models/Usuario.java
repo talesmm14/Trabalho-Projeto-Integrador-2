@@ -28,12 +28,22 @@ public abstract class Usuario implements Serializable {
 	private String email;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataAlteracao;
+	private boolean status;
 	
 	@PreUpdate
 	private void atualizarUsuario() {
 		dataAlteracao= new Date();
 	}
 	
+	protected Usuario() {
+		this.status = true;
+	}
 	
+	protected Usuario(String nome, String cpf, String email) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+		this.status = true;
+	}
 	
 }

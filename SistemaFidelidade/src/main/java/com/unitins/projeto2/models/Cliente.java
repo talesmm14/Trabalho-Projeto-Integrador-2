@@ -13,5 +13,12 @@ public class Cliente extends Usuario {
 	private String telefone;
 	private Integer pontos;
 	
-
+	public Cliente() {}
+	
+	public Cliente(String nome, String cpf, String email, String telefone, Integer pontos) {
+		super(nome, cpf, email);
+		this.telefone = telefone;
+		this.pontos = pontos;
+	}
+	
 }

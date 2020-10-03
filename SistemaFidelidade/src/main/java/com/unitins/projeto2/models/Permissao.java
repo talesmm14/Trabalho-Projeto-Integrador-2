@@ -18,5 +18,11 @@ public class Permissao implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idPermissao;
 	private String descricao;
+	
+	public Permissao() {}
+	
+	public Permissao(String descricao) {
+		this.descricao = descricao;
+	}
 
 }

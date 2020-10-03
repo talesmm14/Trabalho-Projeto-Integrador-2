@@ -17,5 +17,12 @@ public class Funcionario extends Usuario {
 	@JoinColumn(name = "id_permissao")
 	private Permissao permissao;
 	
+	public Funcionario() {}
+
+	public Funcionario(String nome, String cpf, String email, String senha, Permissao permissao) {
+		super(nome, cpf, email);
+		this.senha = senha;
+		this.permissao = permissao;
+	}
 
 }

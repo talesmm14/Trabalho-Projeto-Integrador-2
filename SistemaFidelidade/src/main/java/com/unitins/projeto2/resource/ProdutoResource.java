@@ -28,7 +28,7 @@ public class ProdutoResource {
 	}
 	
 	@GetMapping("/produto/{idProduto}")
-	public Produto listaProdutoUnico(@PathVariable(value = "idProduto") long id) {
+	public Produto findById(@PathVariable(value = "idProduto") long id) {
 		return produtoRepository.findById(id);
 	}
 	
