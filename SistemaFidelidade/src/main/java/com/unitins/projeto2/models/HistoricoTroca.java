@@ -44,12 +44,12 @@ public class HistoricoTroca {
 
 	public HistoricoTroca() {}
 
-	public HistoricoTroca(Cliente cliente, Produto produto, Integer pontosClienteAnterior, Integer pontosClientePosterior, Integer pontosOperacao) {
+	public HistoricoTroca(Cliente cliente, Produto produto) {
 		this.cliente = cliente;
 		this.produto = produto;
-		this.pontosClienteAnterior = pontosClienteAnterior;
-		this.pontosClientePosterior = pontosClientePosterior;
-		this.pontosOperacao = pontosOperacao;
+		this.pontosClienteAnterior = cliente.getPontos();
+		this.pontosClientePosterior = cliente.getPontos() - produto.getPontosRetirada();
+		this.pontosOperacao = produto.getPontosRetirada();
 	}
 	
 }

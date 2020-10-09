@@ -47,4 +47,9 @@ public class ClienteResource {
 		return clienteRepository.save(cliente);
 	}
 
+	@GetMapping("/cliente/{cpfCliente}")
+	public Cliente findByCpf(@PathVariable(value = "cpfCliente") String cpf ) {
+		return clienteRepository.findByCpf(cpf);
+	}
+
 }
