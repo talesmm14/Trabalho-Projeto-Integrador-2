@@ -1,5 +1,6 @@
 package com.unitins.projeto2.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import lombok.Data;
@@ -9,7 +10,8 @@ import lombok.Data;
 public class Cliente extends Usuario {
 
 	private static final long serialVersionUID = -3109859511744004660L;
-
+	
+	@Column(name="telefone", nullable = false)
 	private String telefone;
 	private Integer pontos;
 	

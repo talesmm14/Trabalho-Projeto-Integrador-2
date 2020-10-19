@@ -4,6 +4,7 @@ package com.unitins.projeto2.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,8 +33,11 @@ public class HistoricoTroca {
 	private Produto produto;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataOperacao;
+	@Column(name="pontosClienteAnterior", nullable = false)
 	private Integer pontosClienteAnterior;
+	@Column(name="pontosClientePosterior", nullable = false)
 	private Integer pontosClientePosterior;
+	@Column(name="pontosOperacao", nullable = false)
 	private Integer pontosOperacao;
 	
 	

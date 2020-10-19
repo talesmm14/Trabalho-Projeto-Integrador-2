@@ -3,6 +3,7 @@ package com.unitins.projeto2.models;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,8 +24,11 @@ public abstract class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idUsuario;
+	@Column(name="nome", nullable = false)
 	private String nome;
+	@Column(name="cpf", nullable = false)
 	private String cpf;
+	@Column(name="email", nullable = false)
 	private String email;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataAlteracao;

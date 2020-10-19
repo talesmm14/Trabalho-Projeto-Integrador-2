@@ -1,5 +1,6 @@
 package com.unitins.projeto2.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +13,7 @@ public class Funcionario extends Usuario {
 
 	private static final long serialVersionUID = -2513556090171419870L;
 	
+	@Column(name="senha", nullable = false)
 	private String senha;
 	@ManyToOne
 	@JoinColumn(name = "id_permissao")
